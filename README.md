@@ -1,2 +1,2 @@
-# homebrew-tomozo6
+# homebrew-tap
 HomeBrewのFormula用リポジトリ
