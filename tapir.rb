@@ -4,11 +4,9 @@
 class Tapir < Formula
   desc "Tapir can check the status of CloudWatchAlarm and can enable and disable alarm actions."
   homepage "https://github.com/tomozo6/tapir"
-  url "https://github.com/tomozo6/tapir/archive/v0.1.1.tar.gz"
-  sha256 "cf0827770ebef84b6c355a5c1e85c18de9cb243fc71ab58e4e9f47b4d9cadf44"
+  url "https://github.com/tomozo6/tapir/releases/download/v0.1.1/tapir"
+  sha256 "3b529e3a43297ec23d8f2e3bbfba61688a738eaa81672e2c19dc64c517be84a9"
   license "TIM"
-
-  # depends_on "cmake" => :build
 
   def install
     bin.install 'tapir'
