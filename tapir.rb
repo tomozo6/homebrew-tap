@@ -6,7 +6,7 @@ class Tapir < Formula
   homepage "https://github.com/tomozo6/tapir"
   url "https://github.com/tomozo6/tapir/releases/download/v0.1.2/tapir"
   sha256 "3e1461aca2437e00a8150e5c784b122685aec1c5d6199f889c98dd98262fd7f2"
-  license "TIM"
+  license "MIT"
 
   def install
     bin.install 'tapir'
