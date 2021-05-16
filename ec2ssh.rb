@@ -11,19 +11,19 @@ class Ec2ssh < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.2/ec2ssh_Darwin_x86_64.tar.gz"
-    sha256 "b58c2195bca5f49ff89a14960b86c98277bacdbfcc2b540b19753c74b10a3cc3"
+    sha256 "91515fd585ef9e61e4d5077284b78b36c13806ecfe1b686cc72cb6c07cc74559"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.2/ec2ssh_Darwin_arm64.tar.gz"
-    sha256 "f4a1b3c00ca04369836a53e08d26affc0e09ba45db9ca5cb9b591d38129f869d"
+    sha256 "90791c714f288eeb808abe2c0566ca504b6b2276406ab89ef900f9df38d0de84"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.2/ec2ssh_Linux_x86_64.tar.gz"
-    sha256 "b772baa10cc34c2e1d751414a9526cddfe9baa2df2356db876eee46338fc7b45"
+    sha256 "c6c0e7140985266a701b61c85aece2884477d7e9bb8546b2bdc62b1c31bdf65c"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.2/ec2ssh_Linux_arm64.tar.gz"
-    sha256 "ce8a83815bea55e602ce275e7491e2b600a96104818c7aa6e5e06aec3d9a4168"
+    sha256 "f5ca69dde441afe321636483335de410a48dff681e10820cba6e16c666b39570"
   end
 
   def install
