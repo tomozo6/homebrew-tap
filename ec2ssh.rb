@@ -5,25 +5,25 @@
 class Ec2ssh < Formula
   desc "ec2ssh is a tool that can easily ssh login to AWS EC2."
   homepage "https://github.com/tomozo6/ec2ssh"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.3/ec2ssh_Darwin_x86_64.tar.gz"
-    sha256 "691221cf1c5de94eae53f7234718bed218fc6159056e3d75ed3e39866fa79c39"
+    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Darwin_x86_64.tar.gz"
+    sha256 "89c634259c93e474ccbbc72fe54dcd36477c0d54223ecf29e3fdeb76b1bacb0b"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.3/ec2ssh_Darwin_arm64.tar.gz"
-    sha256 "ef474a36b08204209ec58b48128fb57af892c41f2eb021741d157492ce55e937"
+    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Darwin_arm64.tar.gz"
+    sha256 "c7868071edc684838b85d92f2f3ef13d522d3e089b03d7431e59752da3e94c95"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.3/ec2ssh_Linux_x86_64.tar.gz"
-    sha256 "d1783e588520f15a0060f62282163522a2e5701f455f7db58e73f67f6df8c044"
+    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Linux_x86_64.tar.gz"
+    sha256 "caf6b5e98c020e86b5f49d65a241b1ccd509afcc4852af1c2952fb021e9dfac6"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.3/ec2ssh_Linux_arm64.tar.gz"
-    sha256 "132cfaa02492fd394c0ef1042fd7f6c0c38b4997a27c1804d89f5b15edd72fe7"
+    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Linux_arm64.tar.gz"
+    sha256 "cc44ec362817b29f6c38c64c771a4af26be1b0c01da6bcc87a1472c4e21a94bb"
   end
 
   def install
