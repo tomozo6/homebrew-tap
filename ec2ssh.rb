@@ -5,25 +5,30 @@
 class Ec2ssh < Formula
   desc "ec2ssh is a tool that can easily ssh login to AWS EC2."
   homepage "https://github.com/tomozo6/ec2ssh"
-  version "0.0.4"
+  version "0.0.5"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Darwin_x86_64.tar.gz"
-    sha256 "89c634259c93e474ccbbc72fe54dcd36477c0d54223ecf29e3fdeb76b1bacb0b"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.5/ec2ssh_Darwin_x86_64.tar.gz"
+      sha256 "f87e242ebe147037068a520228d063f2fb99cd3bd19c68f1fa475745e8bfc7b3"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.5/ec2ssh_Darwin_arm64.tar.gz"
+      sha256 "89f50cd3a6086390dc8b7f72c2cb3253c5e07311defc9090e2a0154b87967bc9"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Darwin_arm64.tar.gz"
-    sha256 "c7868071edc684838b85d92f2f3ef13d522d3e089b03d7431e59752da3e94c95"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Linux_x86_64.tar.gz"
-    sha256 "caf6b5e98c020e86b5f49d65a241b1ccd509afcc4852af1c2952fb021e9dfac6"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.4/ec2ssh_Linux_arm64.tar.gz"
-    sha256 "cc44ec362817b29f6c38c64c771a4af26be1b0c01da6bcc87a1472c4e21a94bb"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.5/ec2ssh_Linux_x86_64.tar.gz"
+      sha256 "50f8085985d72124bab2f380f237eeb8d1796534b5451b134c6364a991811c28"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.5/ec2ssh_Linux_arm64.tar.gz"
+      sha256 "d8477521917a667fc2ecb3ab0afb6035e72234e035db90ae0c11a3d5b3375ff4"
+    end
   end
 
   def install
