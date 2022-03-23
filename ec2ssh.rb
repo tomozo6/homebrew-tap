@@ -5,34 +5,45 @@
 class Ec2ssh < Formula
   desc "ec2ssh is a tool that can easily ssh login to AWS EC2."
   homepage "https://github.com/tomozo6/ec2ssh"
-  version "0.0.6"
+  version "0.0.7"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.6/ec2ssh_Darwin_x86_64.tar.gz"
-      sha256 "83a7b87471cc49ff8064d22ae856fc65df4541e046b4674d1a440d8af856b8c5"
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.7/ec2ssh_Darwin_x86_64.tar.gz"
+      sha256 "a28537762b695b2355a8e77dd4dab2eea3295c85251b4412b7a83b4530c11be8"
+
+      def install
+        bin.install "ec2ssh"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.6/ec2ssh_Darwin_arm64.tar.gz"
-      sha256 "4f4e1b6117ee209883117cc7165f021efe884a10fec7d73f73928b467dd19672"
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.7/ec2ssh_Darwin_arm64.tar.gz"
+      sha256 "fffb0e712eb64a920c8b6d7f1f0213eb11768bddf3e0acf6eda2c6aa53cb7972"
+
+      def install
+        bin.install "ec2ssh"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.6/ec2ssh_Linux_x86_64.tar.gz"
-      sha256 "122c46f0ca69825493900fb3c2ad7b939361cc7740ad9a8a3b7e0a95d986f532"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.6/ec2ssh_Linux_arm64.tar.gz"
-      sha256 "af4f75ecbf535f4dac21d3126a9596c3f360c26f98c9bbf478b14d5bcc1885dd"
-    end
-  end
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.7/ec2ssh_Linux_arm64.tar.gz"
+      sha256 "baa213bbbd496344873031b19fc64b826cdb9367dc8765ba351718f273cd63f1"
 
-  def install
-    bin.install "ec2ssh"
+      def install
+        bin.install "ec2ssh"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/tomozo6/ec2ssh/releases/download/v0.0.7/ec2ssh_Linux_x86_64.tar.gz"
+      sha256 "cf4156c86a6b92b73983f82eb5be4fd528bb2b03dd448a075e66884a7b9272b7"
+
+      def install
+        bin.install "ec2ssh"
+      end
+    end
   end
 
   test do
