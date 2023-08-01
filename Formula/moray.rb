@@ -5,20 +5,20 @@
 class Moray < Formula
   desc "moray is a CLI tool to easily realize PortForwarding using SSMSessionManager of AWS."
   homepage "https://github.com/tomozo6/moray"
-  version "0.0.0"
+  version "0.0.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Darwin_arm64.tar.gz"
-      sha256 "7d57cd5f27cf866c45fa3b1e410bf969a50d3099be7e049253526573909f1df4"
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.1/moray_Darwin_arm64.tar.gz"
+      sha256 "d2d915e9975f502bff89a22ffac780536a524c22ca2314ec6b70cb05a2850646"
 
       def install
         bin.install "moray"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Darwin_x86_64.tar.gz"
-      sha256 "64d08d8dd384da474a5ef54a397d0bd2bffe4731020400cb838b6309bc2a9497"
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.1/moray_Darwin_x86_64.tar.gz"
+      sha256 "f52728f724a30791c11fd8baff4d9d3d139c67896d387bc4cb26aa5130cc427b"
 
       def install
         bin.install "moray"
@@ -28,16 +28,16 @@ class Moray < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Linux_arm64.tar.gz"
-      sha256 "f31b8f06e5447d0add81d32517dee175b9e8def2d0b0c35ce2d9d3897d3a9967"
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.1/moray_Linux_arm64.tar.gz"
+      sha256 "c53ff8b3f0cbe510afed0110fd96a220e54ce2e821c8e3f507c414755bab64f1"
 
       def install
         bin.install "moray"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Linux_x86_64.tar.gz"
-      sha256 "94dca49b8b4590704fa1c94161b3299959033e7698016440a256a3d48a5ab56f"
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.1/moray_Linux_x86_64.tar.gz"
+      sha256 "66d1c7af12f7710c48b5e890119e868300786c93e89adb3734b741a5156a85e4"
 
       def install
         bin.install "moray"
