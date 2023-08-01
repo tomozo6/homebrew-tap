@@ -10,7 +10,7 @@ class Moray < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Darwin_arm64.tar.gz"
-      sha256 "f30c53981e2d035aee8a59638ece8114d62b190b5fda43165df7202c425e2bff"
+      sha256 "7d57cd5f27cf866c45fa3b1e410bf969a50d3099be7e049253526573909f1df4"
 
       def install
         bin.install "moray"
@@ -18,7 +18,7 @@ class Moray < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Darwin_x86_64.tar.gz"
-      sha256 "b64545488d7fcef088c4f555c25e4c2614b5ee106f427970b25a8eb8c236df07"
+      sha256 "64d08d8dd384da474a5ef54a397d0bd2bffe4731020400cb838b6309bc2a9497"
 
       def install
         bin.install "moray"
@@ -29,7 +29,7 @@ class Moray < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Linux_arm64.tar.gz"
-      sha256 "010dcd734b79a7471be2f519721ffa703a0543b8746a859956e134d3e617091f"
+      sha256 "f31b8f06e5447d0add81d32517dee175b9e8def2d0b0c35ce2d9d3897d3a9967"
 
       def install
         bin.install "moray"
@@ -37,7 +37,7 @@ class Moray < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/tomozo6/moray/releases/download/v0.0.0/moray_Linux_x86_64.tar.gz"
-      sha256 "0cd74ff19cbbc7f69d6fb9b5533daf57feab1e0031b9fcada9eccdfafe21dddd"
+      sha256 "94dca49b8b4590704fa1c94161b3299959033e7698016440a256a3d48a5ab56f"
 
       def install
         bin.install "moray"
