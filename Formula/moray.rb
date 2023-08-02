@@ -5,20 +5,20 @@
 class Moray < Formula
   desc "moray is a CLI tool to easily realize PortForwarding using SSMSessionManager of AWS."
   homepage "https://github.com/tomozo6/moray"
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.2/moray_Darwin_x86_64.tar.gz"
-      sha256 "308e200fac12e5cb100766ee46ef7c0a1bef7c0b8d7eb6e3013c7b62a9e8a13b"
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.3/moray_Darwin_x86_64.tar.gz"
+      sha256 "a60dfb8a92b3073674d80317de67292ce6cbae0902bb85fae9b652347fd925f3"
 
       def install
         bin.install "moray"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.2/moray_Darwin_arm64.tar.gz"
-      sha256 "0eea49f9ea625f5f8a39f3cad00422e573bfa357533a84cc1de8f3c3e4758d70"
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.3/moray_Darwin_arm64.tar.gz"
+      sha256 "9e4227c8d9ee48bc65bcbcf8e2df27effcf6871a127ae3c095c68555264d5949"
 
       def install
         bin.install "moray"
@@ -27,17 +27,17 @@ class Moray < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.2/moray_Linux_x86_64.tar.gz"
-      sha256 "57928fb63864d45be9fbd5440fae23edee1c2ba1f4dac22f68d2d519a4759a62"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.3/moray_Linux_arm64.tar.gz"
+      sha256 "a6a33274542471b5423726b5453234571d6e02b2a8cbc3b7e1c6bee09c45f3e1"
 
       def install
         bin.install "moray"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.2/moray_Linux_arm64.tar.gz"
-      sha256 "8f0b5e7037f5921b574a28d43f38972f3b5ecdddd77f19126fef0778d93e4e1c"
+    if Hardware::CPU.intel?
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.3/moray_Linux_x86_64.tar.gz"
+      sha256 "937a599f052d003a15c86e8dac6a664759779b3b586dafa0922eeb287f3463a0"
 
       def install
         bin.install "moray"
