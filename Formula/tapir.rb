@@ -5,20 +5,20 @@
 class Tapir < Formula
   desc "tapir is a tool that can efficiently enable and disable for AWS CloudWatchAlarm Actions."
   homepage "https://github.com/tomozo6/tapir"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
-    on_intel do
-      url "https://github.com/tomozo6/tapir/releases/download/v0.1.3/tapir_Darwin_x86_64.tar.gz"
-      sha256 "69583f4043b016dcd78d3e94b79028d0dd9248e992bdbcf5540a64dce3d3e862"
+    if Hardware::CPU.intel?
+      url "https://github.com/tomozo6/tapir/releases/download/v0.1.4/tapir_Darwin_x86_64.tar.gz"
+      sha256 "ad21627dcc200100000a7e67842ffa15f3bd346a64776f74e9ac045e64c1f8f3"
 
       def install
         bin.install "tapir"
       end
     end
-    on_arm do
-      url "https://github.com/tomozo6/tapir/releases/download/v0.1.3/tapir_Darwin_arm64.tar.gz"
-      sha256 "c7fdc0fba133433c101e5ed2207a5c7e72cb1b6e1e5b8feb6fe0e4054af66be6"
+    if Hardware::CPU.arm?
+      url "https://github.com/tomozo6/tapir/releases/download/v0.1.4/tapir_Darwin_arm64.tar.gz"
+      sha256 "e08ecdf319358c2b2720f7fab9084b74073402c56ef80f99d59ca122415c4a87"
 
       def install
         bin.install "tapir"
@@ -27,20 +27,20 @@ class Tapir < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/tomozo6/tapir/releases/download/v0.1.3/tapir_Linux_x86_64.tar.gz"
-        sha256 "4c0af7870a12920aefa434e73f5b5bfb4d6562f99f9b9063e10ff96fd0c8959b"
+        url "https://github.com/tomozo6/tapir/releases/download/v0.1.4/tapir_Linux_x86_64.tar.gz"
+        sha256 "5a691a56aed05c727c8faf775193cad4d715e2f9dd621c58515762dc53d7e331"
 
         def install
           bin.install "tapir"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/tomozo6/tapir/releases/download/v0.1.3/tapir_Linux_arm64.tar.gz"
-        sha256 "bbf870fffd6c8aa08c128b6f66f9d0069cdf6a1387c4c9e20b855e44880aff6d"
+        url "https://github.com/tomozo6/tapir/releases/download/v0.1.4/tapir_Linux_arm64.tar.gz"
+        sha256 "2dec1a01b634de5051468f7e524272e2afb04682337cb2f7a99f87b11a7a13ff"
 
         def install
           bin.install "tapir"
