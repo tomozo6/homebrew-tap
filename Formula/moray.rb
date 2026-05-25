@@ -5,41 +5,39 @@
 class Moray < Formula
   desc "moray is a CLI tool to easily realize PortForwarding using SSMSessionManager of AWS."
   homepage "https://github.com/tomozo6/moray"
-  version "0.0.6"
+  version "0.0.7"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.6/moray_Darwin_arm64.tar.gz"
-      sha256 "f356908a3150660ba99acbebdbd0fcdba4dc37d0b4592db019919ce063beffad"
+    if Hardware::CPU.intel?
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.7/moray_Darwin_x86_64.tar.gz"
+      sha256 "961960e05946f498735a426348f7aa8e2783cb2962aa6fa0ed33a5cd58ac991b"
 
-      def install
+      define_method(:install) do
         bin.install "moray"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.6/moray_Darwin_x86_64.tar.gz"
-      sha256 "14046dc2a2bb685c802215344f458244e13326fdf804a0808d4c2a5dd7140a35"
+    if Hardware::CPU.arm?
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.7/moray_Darwin_arm64.tar.gz"
+      sha256 "b4cc289539d309e9b111b52f4cc530d3cd9feb1ca918a0512c5383d4e75a76b7"
 
-      def install
+      define_method(:install) do
         bin.install "moray"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.6/moray_Linux_arm64.tar.gz"
-      sha256 "fd6dc84a107bbf6848cd1f532e357b584634ae99105545b34e0b018c6493a55d"
-
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.7/moray_Linux_x86_64.tar.gz"
+      sha256 "afa2dfd4df35db0b5e09e728ae0c83ca185a7720db02d608f4c3346d0adc9d67"
+      define_method(:install) do
         bin.install "moray"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/moray/releases/download/v0.0.6/moray_Linux_x86_64.tar.gz"
-      sha256 "9eeff6851846358c135ee59a25a5139167e5a6d3b2bf668d2bfaf08eb7bb13e2"
-
-      def install
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tomozo6/moray/releases/download/v0.0.7/moray_Linux_arm64.tar.gz"
+      sha256 "25bfb4142e9804221b3cc26ba5d25e6ea642c41e8135898ee5bd628c3f8318ab"
+      define_method(:install) do
         bin.install "moray"
       end
     end
