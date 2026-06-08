@@ -5,20 +5,20 @@
 class Tfcmp < Formula
   desc "tfcmp is a Go CLI to compare Terraform code differences across environment directories."
   homepage "https://github.com/tomozo6/tfcmp"
-  version "0.0.0"
+  version "0.0.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.0/tfcmp_Darwin_x86_64.tar.gz"
-      sha256 "06eee4d5567039dca65b2be4e268b8b59291f142556857bb6510fda7def88667"
+      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.1/tfcmp_Darwin_x86_64.tar.gz"
+      sha256 "4a37524034e3162461cd003e9492e3c84947840350e27a142f987d4b8e113988"
 
       define_method(:install) do
         bin.install "tfcmp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.0/tfcmp_Darwin_arm64.tar.gz"
-      sha256 "64fea96593554ea8a250005a4305c745e17b4d2d4f106cb809eec7bbf2ed3ac9"
+      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.1/tfcmp_Darwin_arm64.tar.gz"
+      sha256 "cb45a4ee8d65c90d6271338e193cdea0c6893da1b8a1bbb8e41eb31dbe90b278"
 
       define_method(:install) do
         bin.install "tfcmp"
@@ -28,15 +28,15 @@ class Tfcmp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.0/tfcmp_Linux_x86_64.tar.gz"
-      sha256 "66c3388c1e5cda48acc72c1374cbb8ae0f8da4b18521c06eecc9c42fb5abc97a"
+      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.1/tfcmp_Linux_x86_64.tar.gz"
+      sha256 "6dc354fa99e711a9a77d480ada48450814e6651aaa8e9a7fd738e6e079ae4c9f"
       define_method(:install) do
         bin.install "tfcmp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.0/tfcmp_Linux_arm64.tar.gz"
-      sha256 "9593fab26aeaded809b879dcea1186d2eeb70cd20c34b26963ba857bde134641"
+      url "https://github.com/tomozo6/tfcmp/releases/download/v0.0.1/tfcmp_Linux_arm64.tar.gz"
+      sha256 "54e07e9face724df488e179405e403b14a812e64cf034787d097a53f9a89fd8f"
       define_method(:install) do
         bin.install "tfcmp"
       end
